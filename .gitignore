@@ -1,0 +1,16 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Local secrets
+.env
+.env.*
+!.env.example
