@@ -42,3 +42,8 @@ From the project folder:
 ```powershell
 git pull --ff-only
 ```
+
+## Questions to confirm with the lecturer
+
+1. Should the AI choose the number of rounds and the move timeout, or should these be configured manually?
+2. Will the opponent be the provided `random` player, or another player implementation that we do not yet have access to?
