@@ -21,10 +21,16 @@ No additional Python packages are required.
 Open the VS Code terminal in the project folder and run:
 
 ```powershell
-python -X utf8 game.py
+python game.py
 ```
 
-On Windows, use `py -X utf8 game.py` if your Python command is `py`. The UTF-8 flag helps display the board symbols correctly.
+On Windows, you can also use the Python launcher:
+
+```powershell
+py game.py
+```
+
+If you get a Unicode encoding error or the board symbols do not display correctly, try `python -X utf8 game.py` or `py -X utf8 game.py`.
 
 Follow the prompts. For a quick run, enter:
 
