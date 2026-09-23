@@ -7,7 +7,8 @@ Introduction to Programming (ITP) group project implementing a terminal-based, t
 - Python 3 (verified with Python 3.14.3).
 - VS Code with your Python interpreter configured.
 - Git for cloning and syncing the repository.
-- A GitHub account with access to this private repository.
+
+The repository is public; no GitHub account is required to clone or download it. Push access requires collaborator permissions.
 
 The project uses only the Python standard library. No external dependencies or API keys are required; a virtual environment is optional.
 
@@ -148,7 +149,7 @@ Keep this README aligned with any changes to setup, the player interface, or gam
 
 | Symptom | Check |
 | --- | --- |
-| Clone fails or GitHub returns 404 | Authenticate with an account that has access to `zentverse/itp-project`. |
+| Clone fails or GitHub returns 404 | Check the repository URL and your network connection. Public read access does not require authentication. |
 | `game.py` cannot be found or no players are listed | Run from the repository root, with all player modules present. |
 | A player module fails to load | Read the startup error; confirm the module imports successfully and exports `play`. |
 | Player selection is rejected | Enter the exact lowercase name shown at startup, such as `ai`, `human`, or `random`. |
