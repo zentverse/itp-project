@@ -49,6 +49,15 @@ From the project folder:
 git pull --ff-only
 ```
 
+## Progress so far
+
+- We played around with the game to get familiar with how it works.
+- We explored `game.py` and the other Python files to understand the game flow and how the players interact with it.
+- We started building our AI player in `player_ai.py` and tested hardcoded moves.
+- We experimented with `memory`, but we have not fully understood how to use it yet.
+
+**Next session:** Start with `memory`—trace how it is passed into `play()` and returned between turns, then use it to track the AI's progress through the hardcoded moves.
+
 ## Questions to confirm with the lecturer
 
 1. Should the AI choose the number of rounds and the move timeout, or should these be configured manually?
