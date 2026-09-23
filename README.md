@@ -58,6 +58,17 @@ git pull --ff-only
 
 **Next session:** Start with `memory`—trace how it is passed into `play()` and returned between turns, then use it to track the AI's progress through the hardcoded moves.
 
+## Proposed timeline
+
+| Period (2026) | Group activities | Target |
+| --- | --- | --- |
+| September 23–27 | Understand `memory`, trace the hardcoded moves, and review `board`, `choices`, and `player`. Ask the lecturer how the winning target `m` should be handled and which opponents are used for assessment. | Everyone can explain the existing player and follow its state across turns. |
+| September 28–October 4 | Simulate moves, develop win/block detection once `m` is clarified, and agree on a simple strategy. Test small examples. | A working first strategy that makes legal moves and handles the selected examples. |
+| October 5–11 | Add limited look-ahead, measure execution time against the one-second limit, and test repeated games across board sizes. Use the October 8 project session for questions and try the university's upload checks. | A reliable player with recorded results and a clear list of remaining fixes. |
+| October 12–16 | Fix problems, prepare the A4 landscape poster, rehearse the pitch of up to five minutes, and walk through the final code. | Aim to finish and submit by October 16, subject to the actual upload arrangements. Everyone should understand the submitted code. |
+| October 17–19 | Keep time available for necessary corrections and a final rehearsal. | Confirm the submitted version and be ready to present. |
+| October 20 | Project presentation, 10:00–11:45, according to the supplied timetable. | Present the project and answer questions. |
+
 ## Questions to confirm with the lecturer
 
 1. Should the AI choose the number of rounds and the move timeout, or should these be configured manually?
