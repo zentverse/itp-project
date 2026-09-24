@@ -1,4 +1,4 @@
-# ITP Project d
+# ITP Project
 
 Introduction to Programming group project.
 
