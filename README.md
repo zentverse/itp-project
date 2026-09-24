@@ -73,11 +73,12 @@ git pull --ff-only
 
 - Explain the AI's strategy on the poster.
 - There is no need to show the code on the poster.
+- The submission platform will automatically set the number of rounds and the move timeout; our AI does not need to choose them.
+- The lecturer mentioned that the opponent will be a random player, which we understand to mean a player that makes random moves. However, we recall the assignment guidelines referring to a player developed last year. The exact opponent used for assessment remains unclear.
 
 ## Questions to confirm with the lecturer
 
-1. Should the AI choose the number of rounds and the move timeout, or should these be configured manually?
-2. Will the opponent be the provided `random` player, or another player implementation that we do not yet have access to?
+None.
 
 ## Strategy
 
