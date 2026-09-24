@@ -69,6 +69,11 @@ git pull --ff-only
 | October 17–19 | Keep time available for necessary corrections and a final rehearsal. | Confirm the submitted version and be ready to present. |
 | October 20 | Project presentation, 10:00–11:45, according to the supplied timetable. | Present the project and answer questions. |
 
+## Points from the support session
+
+- Explain the AI's strategy on the poster.
+- There is no need to show the code on the poster.
+
 ## Questions to confirm with the lecturer
 
 1. Should the AI choose the number of rounds and the move timeout, or should these be configured manually?
