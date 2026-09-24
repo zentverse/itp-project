@@ -3,9 +3,7 @@ from typing import Any, List, Tuple
 
 def play(board:List[List[int]], choices:List[int], player:int, memory:Any) -> Tuple[int, Any]:    
    
-    print('board===>',board)
-    print('choices===>',choices)
-    print('memory===>',memory)
+    
     '''Your team's player.                                                                        
                                                                                                    
          Arguments:                                                                                
