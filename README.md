@@ -78,3 +78,19 @@ git pull --ff-only
 
 1. Should the AI choose the number of rounds and the move timeout, or should these be configured manually?
 2. Will the opponent be the provided `random` player, or another player implementation that we do not yet have access to?
+
+## Strategy
+
+- Take the middle column. The middle column is included in the most four-in-a-row lines possible. 
+- The one who controls the middle has the most paths of attack.
+- Build double threats. The strongest move is to create two threats at once – two different places where you can get four in a row next time. The opponent can only block one.
+- Block in time. Always keep an eye on your opponent's three-in-a-row and block before it's too late. Don't miss the diagonals.
+- Think of "odd and even" rows. Advanced players count on which lines (counted from below) the threats end up on, as this determines who gets there first.
+- Avoid building for the opponent. Each tile you place raises the column and can give your opponent a new seat on top – think one step ahead.
+
+Common mistakes:
+
+- To only focus on your own line and forget to watch the opponent.
+- To miss the diagonal threats, which are the hardest to see.
+- Filling in a column and thus giving the opponent a winning position directly above.
+- Playing out to the edges too early instead of fighting for the middle.
