@@ -41,6 +41,14 @@ Follow the prompts. For a quick run, enter:
 
 Choose `human` for either player to play yourself. Press **Ctrl+C** to stop.
 
+## `game.py` and `run_game.py`
+
+Both files start the same game and discover player modules from the project directory, but they provide different command-line flows:
+
+- **`game.py`** contains the core game implementation and its built-in command-line interface. It asks you to choose players, set a move timeout, and enter the number of rounds. Each round uses a randomly selected board size and target length.
+- **`run_game.py`** is a separate convenience launcher that imports and uses the game code in `game.py`. When you choose `ai` versus `random`, it skips the timeout and round prompts and automatically plays three rounds with a one-second timeout per move. For other player combinations, it asks for the timeout and round count.
+
+
 ## Get updates
 
 From the project folder:
@@ -54,6 +62,7 @@ git pull --ff-only
 - We played around with the game to get familiar with how it works.
 - We explored `game.py` and the other Python files to understand the game flow and how the players interact with it.
 - We started building our AI player in `player_ai.py` and tested hardcoded moves.
+- `player_wip.py` is a work-in-progress file for the exploratory work and implementation details behind our approach. It will contain the groundwork and source needed to understand what we are doing. Once the AI is finalized, that work will move into `ai.py`, which will replace `player_wip.py` as the final implementation.
 - We experimented with `memory`, but we have not fully understood how to use it yet.
 
 **Next session:** Start with `memory`—trace how it is passed into `play()` and returned between turns, then use it to track the AI's progress through the hardcoded moves.
