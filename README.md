@@ -1,4 +1,4 @@
-# ITP Project d
+# ITP Project
 
 Introduction to Programming group project.
 
@@ -18,21 +18,21 @@ No additional Python packages are required.
 
 ## Run
 
-Open the VS Code terminal in the project folder and run:
+Open the VS Code terminal in the project folder and run the convenience launcher:
 
 ```powershell
-python game.py
+python run_game.py
 ```
 
 On Windows, you can also use the Python launcher:
 
 ```powershell
-py game.py
+py run_game.py
 ```
 
-If you get a Unicode encoding error or the board symbols do not display correctly, try `python -X utf8 game.py` or `py -X utf8 game.py`.
+If you get a Unicode encoding error or the board symbols do not display correctly, try `python -X utf8 run_game.py` or `py -X utf8 run_game.py`.
 
-Follow the prompts. For a quick run, enter:
+Select `ai` and `random` for a preset run of three rounds with a one-second move timeout. For other player combinations, follow the prompts for timeout and round count. For a quick manual run, enter:
 
 - Player 1: `ai`
 - Player 2: `random`
@@ -43,10 +43,10 @@ Choose `human` for either player to play yourself. Press **Ctrl+C** to stop.
 
 ## `game.py` and `run_game.py`
 
-Both files start the same game and discover player modules from the project directory, but they provide different command-line flows:
+Both files start the same game but provide different command-line flows:
 
-- **`game.py`** contains the core game implementation and its built-in command-line interface. It asks you to choose players, set a move timeout, and enter the number of rounds. Each round uses a randomly selected board size and target length.
-- **`run_game.py`** is a separate convenience launcher that imports and uses the game code in `game.py`. When you choose `ai` versus `random`, it skips the timeout and round prompts and automatically plays three rounds with a one-second timeout per move. For other player combinations, it asks for the timeout and round count.
+- **`game.py`** contains the core game implementation and its built-in command-line interface. It discovers `player_*.py` files, then asks you to choose players, set a move timeout, and enter the number of rounds. Each round uses a randomly selected board size and target length.
+- **`run_game.py`** imports and uses the game code in `game.py`, and makes `ai.py` selectable as `ai`. When you choose `ai` versus `random`, it skips the timeout and round prompts and automatically plays three rounds with a one-second timeout per move. For other player combinations, it asks for the timeout and round count.
 
 
 ## Get updates
@@ -82,8 +82,25 @@ git pull --ff-only
 
 - Explain the AI's strategy on the poster.
 - There is no need to show the code on the poster.
+- The submission platform will automatically set the number of rounds and the move timeout; our AI does not need to choose them.
+- The lecturer mentioned that the opponent will be a random player, which we understand to mean a player that makes random moves. However, we recall the assignment guidelines referring to a player developed last year. The exact opponent used for assessment remains unclear.
 
 ## Questions to confirm with the lecturer
 
-1. Should the AI choose the number of rounds and the move timeout, or should these be configured manually?
-2. Will the opponent be the provided `random` player, or another player implementation that we do not yet have access to?
+None.
+
+## Strategy
+
+- Take the middle column. The middle column is included in the most four-in-a-row lines possible. 
+- The one who controls the middle has the most paths of attack.
+- Build double threats. The strongest move is to create two threats at once – two different places where you can get four in a row next time. The opponent can only block one.
+- Block in time. Always keep an eye on your opponent's three-in-a-row and block before it's too late. Don't miss the diagonals.
+- Think of "odd and even" rows. Advanced players count on which lines (counted from below) the threats end up on, as this determines who gets there first.
+- Avoid building for the opponent. Each tile you place raises the column and can give your opponent a new seat on top – think one step ahead.
+
+Common mistakes:
+
+- To only focus on your own line and forget to watch the opponent.
+- To miss the diagonal threats, which are the hardest to see.
+- Filling in a column and thus giving the opponent a winning position directly above.
+- Playing out to the edges too early instead of fighting for the middle.
