@@ -13,10 +13,9 @@ def main():
     second = input("\nSelect player 2 (x): ")
     if first not in players or second not in players:
         raise SystemExit("Unknown player name.")
-    automated = {first, second} == {"ai", "random"}
-    if automated:
+    if "human" not in (first, second):
         timeout, rounds = 1.0, 3
-        print("\nAI vs random: using 1 second per move and 3 rounds.")
+        print("\nAutomated match: using 1 second per move and 3 rounds.")
     else:
         timeout = float(input("\nEnter the move timeout in seconds (0 for no timeout): "))
         rounds = int(input("\nEnter the number of rounds: "))
