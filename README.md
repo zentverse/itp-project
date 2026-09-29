@@ -67,6 +67,13 @@ git pull --ff-only
 
 **Next session:** Start with `memory`—trace how it is passed into `play()` and returned between turns, then use it to track the AI's progress through the hardcoded moves.
 
+## Submission deadlines
+
+| Submission | Deadline (2026) |
+| --- | --- |
+| Programming Project - Poster | Monday, October 19, 12:00 |
+| Project submission | Tuesday, October 20, 08:00 |
+
 ## Proposed timeline
 
 | Period (2026) | Group activities | Target |
