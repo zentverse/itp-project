@@ -92,6 +92,10 @@ git pull --ff-only
 - The submission platform will automatically set the number of rounds and the move timeout; our AI does not need to choose them.
 - The lecturer mentioned that the opponent will be a random player, which we understand to mean a player that makes random moves. However, we recall the assignment guidelines referring to a player developed last year. The exact opponent used for assessment remains unclear.
 
+## Project clarification from the Q&A forum
+
+`play()` does not receive `n_target`. The lecturer advised designing the strategy without it, balancing extension of our own longest consecutive span against blocking the opponent's. Since the winning target is unknown, blocking urgency must be estimated rather than determined exactly.
+
 ## Questions to confirm with the lecturer
 
 None.
