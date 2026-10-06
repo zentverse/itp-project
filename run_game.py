@@ -13,12 +13,13 @@ def main():
     second = input("\nSelect player 2 (x): ")
     if first not in players or second not in players:
         raise SystemExit("Unknown player name.")
+    rounds = random.randint(1, 50)
     if "human" not in (first, second):
-        timeout, rounds = 1.0, 3
-        print("\nAutomated match: using 1 second per move and 3 rounds.")
+        timeout = 1.0
+        print(f"\nAutomated match: using 1 second per move and {rounds} rounds.")
     else:
         timeout = float(input("\nEnter the move timeout in seconds (0 for no timeout): "))
-        rounds = int(input("\nEnter the number of rounds: "))
+        print(f"\nPlaying {rounds} rounds.")
     results = []
     for _ in range(rounds):
         size = random.randint(3, 10)
