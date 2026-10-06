@@ -14,16 +14,25 @@ def main():
     if first not in players or second not in players:
         raise SystemExit("Unknown player name.")
     if "human" not in (first, second):
-        timeout, rounds = 1.0, 3
+        timeout, rounds = 1.0, 30
         print("\nAutomated match: using 1 second per move and 3 rounds.")
     else:
         timeout = float(input("\nEnter the move timeout in seconds (0 for no timeout): "))
         rounds = int(input("\nEnter the number of rounds: "))
     results = []
-    for _ in range(rounds):
+    wip_wins = 0
+
+    for round_number in range(rounds):
         size = random.randint(3, 10)
         g = game.TicTacToe(size, size, random.randint(3, size), timeout)
-        results.append(g.start(players[first], players[second]))
+        result = g.start(players[first], players[second])
+        results.append(result)
+
+        if result[0] == 0:
+            wip_wins += 1
+
+        winrate = (wip_wins / (round_number + 1)) * 100
+        print(f"Round {round_number + 1}: WIP winrate: {winrate:.2f}%")
     winner = int(sum(w for w, _, _ in results) > len(results) / 2)
     print(f"\nPlayer {winner + 1} wins the game!")
 

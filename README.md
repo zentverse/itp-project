@@ -98,7 +98,7 @@ git pull --ff-only
 
 ## Questions to confirm with the lecturer
 
-None.
+- Timeout and rounds: What range should we have for the rounds? And should timeout and rounds be input från us or by itself?
 
 ## Strategy
 
@@ -115,3 +115,15 @@ Common mistakes:
 - To miss the diagonal threats, which are the hardest to see.
 - Filling in a column and thus giving the opponent a winning position directly above.
 - Playing out to the edges too early instead of fighting for the middle.
+
+
+
+## Winrate
+
+2026-10-06
+30 rounds:
+Try 1. winrate: 80%
+Try 2. winrate: 67%
+Try 3. winrate: 27%
+Try 4. winrate: 73
+Try 5: 
