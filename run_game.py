@@ -32,6 +32,7 @@ def main():
     print("Win rate after each round:")
     for round_number, (round_winner, _, _) in enumerate(results, start=1):
         wins[round_winner] += 1
+        print(f"Round {round_number}: Player {round_winner + 1} won")
         player1_rate = wins[0] / round_number * 100
         player2_rate = wins[1] / round_number * 100
         print(

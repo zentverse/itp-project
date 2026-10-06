@@ -102,6 +102,7 @@ git pull --ff-only
 
 ## Strategy
 
+- Start in the middle if we begin the game
 - Take the middle column. The middle column is included in the most four-in-a-row lines possible. 
 - The one who controls the middle has the most paths of attack.
 - Build double threats. The strongest move is to create two threats at once – two different places where you can get four in a row next time. The opponent can only block one.
@@ -125,5 +126,5 @@ Common mistakes:
 Try 1. winrate: 80%
 Try 2. winrate: 67%
 Try 3. winrate: 27%
-Try 4. winrate: 73
-Try 5: 
+Try 4. winrate: 73%
+Try 5: winrate: 30%
