@@ -52,42 +52,75 @@ def play(
     # Target = 3 for now
     target = 3
 
-    # Strategy 1: Imitate win, (explain)
-    # Look for an immediate winning move.
+    # ---------------------------------------------------------
+    # 1. IMMEDIATE WIN
+    # ---------------------------------------------------------
+    #
+    # Try every legal column.
+    # If placing our piece there wins the game, play it.
+    #
+
     for column in choices:
 
-        # Pretend to play in this column
         board[column].append(player)
 
-        # Check if we win
         if won(board, player, target):
 
-            # Undo the test move
             board[column].pop()
 
-            # Actually choose this column
             return column, memory
 
-        # Undo the test move
         board[column].pop()
 
-    # If we cannot win immediately,
-    # choose a random legal move for now.
-    
-    # Center control.
+    # ---------------------------------------------------------
+    # 2. IMMEDIATE BLOCK
+    # ---------------------------------------------------------
+    #
+    # Check whether the opponent could win on their next move.
+    #
+    # For every legal column, temporarily place an opponent piece.
+    # If that gives the opponent a winning line, we must play in
+    # that column ourselves to block it.
+    #
+
+    opponent = 1 if player == 2 else 2
+
+    for column in choices:
+
+        board[column].append(opponent)
+
+        if won(board, opponent, target):
+
+            board[column].pop()
+
+            # Play in the same column to block the opponent.
+            return column, memory
+
+        board[column].pop()
+
+    # ---------------------------------------------------------
+    # 3. CENTER CONTROL
+    # ---------------------------------------------------------
+    #
+    # If there is no immediate win and no immediate threat,
+    # prefer the column closest to the center.
+    #
+
     center = len(board) // 2
 
-    return min(choices, key=lambda column: abs(column - center)), memory
+    best_column = min(
+        choices,
+        key=lambda column: abs(column - center)
+    )
 
-
-
+    return best_column, memory
 
 
 # Immediate winning move. +
 # Immediate block. +
 # Double threats (create two winning possibilities).
 # Center control. +
-# Evaluate open threats / potential winning lines, penalize opponent threats, and ignore blocked windows.
+# Evaluate open threats / potential winning lines, penalize opponent threats, and ignore blocked windows.+
 # Minimax with alpha-beta pruning, but only search shallowly because the board can be as large as 10×10 and each move has a 1-second limit.
 # Iterative deepening with a deadline.
 # Move ordering: winning move > blocking move > double threat > center > strong potential > other.
